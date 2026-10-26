@@ -8,7 +8,6 @@
 ![uv](https://img.shields.io/badge/uv-包管理-DE5FE9)
 ![飞书](https://img.shields.io/badge/飞书-机器人%20·%20多维表格%20·%20工作流-3370FF)
 ![LLM](https://img.shields.io/badge/LLM-DeepSeek%20%2F%20任意%20OpenAI%20兼容接口-4D6BFE)
-![Remotion](https://img.shields.io/badge/视频-Remotion-0B84F3)
 
 </div>
 
@@ -89,7 +88,6 @@ flowchart LR
 | [`ai-company-sim/`](ai-company-sim/README.md) | 模拟程序：8 个 AI 角色、3 个并行项目、15 个工作日。进度由规则计算，AI 只负责说话和评判 |
 | [`ai-assistant/`](ai-assistant/README.md) | AI 进度助手：飞书机器人 agent，和模拟程序完全隔离，只通过飞书 API 读写 |
 | `shared/` | 两者之间唯一的连接：模拟时钟 `clock.jsonl`（运行时生成） |
-| [`video/`](video/README.md) | 求职视频（Remotion），画面全部用代码绘制，内容来自真实聊天和表格记录 |
 | `AI模拟公司设定包.md` | 完整设定（**含剧透**，想自己玩的话先别看） |
 
 ## 自己跑一遍

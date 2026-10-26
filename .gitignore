@@ -13,12 +13,6 @@ ai-assistant/核对记录/
 __pycache__/
 *.py[oc]
 node_modules/
-video/out/
 .DS_Store
-# 视频：不上传的东西
-video/GPT生成/
-video/MiniMax_*.mp3
-video/public/voice/全片-原始.mp3
-video/public/music/bgm-温暖和弦.mp3
-# 飞书截图里有账号名；正片也没用到
-video/public/素材/
+# 求职视频（Remotion 工程）只留在本地，不上传
+video/
