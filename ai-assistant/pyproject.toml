@@ -1,0 +1,19 @@
+[project]
+name = "ai-assistant"
+version = "0.1.0"
+description = "AI 进度助手：只读飞书（群聊、任务表、日报表），列出要核实 / 要催 / 快到期的事"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "lark-oapi>=1.7.5",
+    "openai>=3.36.0",
+    "pydantic>=2.14.1",
+    "python-dotenv>=1.2.4",
+]
+
+[project.scripts]
+assistant = "ai_assistant.app:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"

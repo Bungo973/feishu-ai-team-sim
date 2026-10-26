@@ -1,0 +1,1293 @@
+{
+ "sim_day": 0,
+ "calendar": {
+  "D1": "2026-11-02 周一",
+  "D2": "2026-11-03 周二",
+  "D3": "2026-11-04 周三",
+  "D4": "2026-11-05 周四",
+  "D5": "2026-11-06 周五",
+  "D6": "2026-11-09 周一",
+  "D7": "2026-11-10 周二",
+  "D8": "2026-11-11 周三",
+  "D9": "2026-11-12 周四",
+  "D10": "2026-11-13 周五",
+  "D11": "2026-11-16 周一",
+  "D12": "2026-11-17 周二",
+  "D13": "2026-11-18 周三",
+  "D14": "2026-11-19 周四",
+  "D15": "2026-11-20 周五"
+ },
+ "randomized": {
+  "_说明": "初始化时由 director.py 按 4.10 填写，玩家不看",
+  "event_day_shift": {},
+  "new_price": null,
+  "claim_change": null,
+  "sick_person": null,
+  "print_delay_to": null,
+  "seed": null
+ },
+ "people": {
+  "wangli": {
+   "name": "王丽",
+   "title": "市场经理",
+   "base_hours": 6,
+   "eff": 1.0,
+   "trust": 50,
+   "report_rate": null
+  },
+  "zhangwei": {
+   "name": "张伟",
+   "title": "资深市场专员",
+   "base_hours": 6,
+   "eff": 1.0,
+   "trust": 50,
+   "fixed_daily_h": 1.0,
+   "report_rate": 0.4
+  },
+  "lixiang": {
+   "name": "李想",
+   "title": "内容运营",
+   "base_hours": 6,
+   "eff": 0.7,
+   "trust": 50,
+   "fixed_daily_h": 1.0,
+   "report_rate": 1.0,
+   "bias": 25
+  },
+  "chenyue": {
+   "name": "陈悦",
+   "title": "视觉设计",
+   "base_hours": 6,
+   "eff": 1.0,
+   "trust": 50,
+   "fixed_daily_h": 0.8,
+   "report_rate": 0.7,
+   "rework_prob": 0.3
+  },
+  "zhoutao": {
+   "name": "周涛",
+   "title": "产品经理",
+   "base_hours": 2,
+   "eff": 0.8,
+   "trust": 50,
+   "late_days": 1
+  },
+  "liumin": {
+   "name": "刘敏",
+   "title": "HRBP",
+   "trust": 50
+  },
+  "sunlei": {
+   "name": "孙磊",
+   "title": "鸿图会展项目经理",
+   "trust": 50,
+   "delay_prob": 0.4
+  },
+  "huang": {
+   "name": "黄建国",
+   "title": "市场总监",
+   "trust": 50
+  }
+ },
+ "meetings": [
+  {
+   "name": "周例会",
+   "weekday": "周一",
+   "time": "10:00",
+   "attendees": [
+    "wangli",
+    "zhangwei",
+    "lixiang",
+    "chenyue",
+    "player"
+   ]
+  },
+  {
+   "name": "发布会筹备会",
+   "weekday": "周三",
+   "time": "15:00",
+   "attendees": [
+    "wangli",
+    "zhangwei",
+    "player",
+    "zhoutao",
+    "sunlei"
+   ]
+  },
+  {
+   "name": "周会",
+   "weekday": "周五",
+   "time": "16:00",
+   "attendees": [
+    "wangli",
+    "zhangwei",
+    "lixiang",
+    "chenyue",
+    "player"
+   ]
+  }
+ ],
+ "tasks": [
+  {
+   "id": "A0",
+   "project": "A",
+   "name": "产品卖点与定价确认",
+   "owner": "zhoutao",
+   "est_h": 4,
+   "done_h": 2.0,
+   "deps": [],
+   "start_day": 1,
+   "due_day": 2,
+   "approver": "wangli",
+   "status": "进行中",
+   "reported_progress": 50,
+   "exists": true
+  },
+  {
+   "id": "A1",
+   "project": "A",
+   "name": "场地确认与合同签订",
+   "owner": "zhangwei",
+   "est_h": 0,
+   "done_h": 0,
+   "deps": [],
+   "start_day": 0,
+   "due_day": 0,
+   "approver": null,
+   "status": "已完成",
+   "reported_progress": 100,
+   "exists": true
+  },
+  {
+   "id": "A2",
+   "project": "A",
+   "name": "邀约名单与嘉宾确认",
+   "owner": "zhangwei",
+   "est_h": 12,
+   "done_h": 3.6,
+   "deps": [],
+   "start_day": 1,
+   "due_day": 7,
+   "approver": null,
+   "status": "进行中",
+   "reported_progress": 30,
+   "exists": true
+  },
+  {
+   "id": "A3",
+   "project": "A",
+   "name": "邀请函文案",
+   "owner": "lixiang",
+   "est_h": 4,
+   "done_h": 0.0,
+   "deps": [
+    "A0"
+   ],
+   "start_day": 2,
+   "due_day": 3,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A4",
+   "project": "A",
+   "name": "邀请函设计（电子版）",
+   "owner": "chenyue",
+   "est_h": 6,
+   "done_h": 0.0,
+   "deps": [
+    "A3"
+   ],
+   "start_day": 4,
+   "due_day": 5,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A5",
+   "project": "A",
+   "name": "邀请函发放与回执统计",
+   "owner": "zhangwei",
+   "est_h": 6,
+   "done_h": 0.0,
+   "deps": [
+    "A2",
+    "A4"
+   ],
+   "start_day": 6,
+   "due_day": 10,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A6",
+   "project": "A",
+   "name": "主视觉KV与现场物料设计",
+   "owner": "chenyue",
+   "est_h": 16,
+   "done_h": 0.0,
+   "deps": [
+    "A0"
+   ],
+   "start_day": 3,
+   "due_day": 8,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A7",
+   "project": "A",
+   "name": "印刷下单与预付款申请",
+   "owner": "zhangwei",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [],
+   "deps_note": "付款申请可提前；下单确认需A6审核通过",
+   "start_day": 8,
+   "due_day": 9,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "finance_days": 1
+  },
+  {
+   "id": "A8",
+   "project": "A",
+   "name": "物料印刷制作",
+   "owner": "sunlei",
+   "est_h": 0,
+   "done_h": 0,
+   "deps": [
+    "A7"
+   ],
+   "start_day": 9,
+   "due_day": 12,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "lead_days": 3
+  },
+  {
+   "id": "A9",
+   "project": "A",
+   "name": "发布会流程Run-down与主持稿",
+   "owner": "lixiang",
+   "est_h": 8,
+   "done_h": 0.0,
+   "deps": [
+    "A0"
+   ],
+   "start_day": 6,
+   "due_day": 9,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A10",
+   "project": "A",
+   "name": "演讲PPT内容",
+   "owner": "zhoutao",
+   "est_h": 6,
+   "done_h": 0.0,
+   "deps": [
+    "A0"
+   ],
+   "start_day": 6,
+   "due_day": 10,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A11",
+   "project": "A",
+   "name": "演讲PPT美化",
+   "owner": "chenyue",
+   "est_h": 8,
+   "done_h": 0.0,
+   "deps": [
+    "A10"
+   ],
+   "start_day": 10,
+   "due_day": 11,
+   "approver": "zhoutao",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A12",
+   "project": "A",
+   "name": "新闻通稿",
+   "owner": "lixiang",
+   "est_h": 4,
+   "done_h": 0.0,
+   "deps": [
+    "A0"
+   ],
+   "start_day": 10,
+   "due_day": 12,
+   "approver": "wangli+zhoutao",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A13",
+   "project": "A",
+   "name": "伴手礼采购",
+   "owner": "zhangwei",
+   "est_h": 3,
+   "done_h": 0.0,
+   "deps": [],
+   "start_day": 3,
+   "due_day": 8,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": false,
+   "note": "仅存在于E03口头布置；玩家记录后exists=true"
+  },
+  {
+   "id": "A14",
+   "project": "A",
+   "name": "直播方案与执行",
+   "owner": "zhangwei",
+   "est_h": 10,
+   "done_h": 0.0,
+   "deps": [
+    "预算审批"
+   ],
+   "start_day": 4,
+   "due_day": 12,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": false,
+   "note": "E04触发后exists=true"
+  },
+  {
+   "id": "A15",
+   "project": "A",
+   "name": "彩排",
+   "owner": "all",
+   "est_h": 0,
+   "done_h": 0,
+   "deps": [
+    "A8",
+    "A9",
+    "A11"
+   ],
+   "start_day": 12,
+   "due_day": 12,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A16",
+   "project": "A",
+   "name": "发布会执行",
+   "owner": "all",
+   "est_h": 0,
+   "done_h": 0,
+   "deps": [
+    "A15"
+   ],
+   "start_day": 13,
+   "due_day": 13,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "A17",
+   "project": "A",
+   "name": "会后传播与线索整理",
+   "owner": "lixiang+zhangwei",
+   "est_h": 8,
+   "done_h": 0.0,
+   "deps": [
+    "A16"
+   ],
+   "start_day": 14,
+   "due_day": 15,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "B01-文",
+   "project": "B",
+   "name": "降温预警｜办公室怕冷星人自救指南（文案）",
+   "owner": "lixiang",
+   "est_h": 2,
+   "done_h": 2.0,
+   "deps": [],
+   "start_day": 1,
+   "due_day": 1,
+   "approver": null,
+   "status": "已完成",
+   "reported_progress": 100,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 1,
+   "publish_time": "12:00"
+  },
+  {
+   "id": "B01-图",
+   "project": "B",
+   "name": "降温预警｜办公室怕冷星人自救指南（配图）",
+   "owner": "chenyue",
+   "est_h": 1,
+   "done_h": 1.0,
+   "deps": [
+    "B01-文"
+   ],
+   "start_day": 1,
+   "due_day": 1,
+   "approver": null,
+   "status": "已完成",
+   "reported_progress": 100,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 1
+  },
+  {
+   "id": "B02-文",
+   "project": "B",
+   "name": "秋冬取暖误区：这5个习惯最费电（文案）",
+   "owner": "lixiang",
+   "est_h": 5,
+   "done_h": 3.0,
+   "deps": [],
+   "start_day": 1,
+   "due_day": 2,
+   "approver": "wangli",
+   "status": "进行中",
+   "reported_progress": 60,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 2,
+   "publish_time": "20:00"
+  },
+  {
+   "id": "B02-图",
+   "project": "B",
+   "name": "秋冬取暖误区：这5个习惯最费电（配图）",
+   "owner": "chenyue",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [
+    "B02-文"
+   ],
+   "start_day": 1,
+   "due_day": 2,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 2
+  },
+  {
+   "id": "B03-文",
+   "project": "B",
+   "name": "打工人桌面好物分享｜冬天篇（文案）",
+   "owner": "lixiang",
+   "est_h": 2,
+   "done_h": 0.4,
+   "deps": [],
+   "start_day": 2,
+   "due_day": 3,
+   "approver": null,
+   "status": "进行中",
+   "reported_progress": 20,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 3,
+   "publish_time": "12:00"
+  },
+  {
+   "id": "B03-图",
+   "project": "B",
+   "name": "打工人桌面好物分享｜冬天篇（配图）",
+   "owner": "chenyue",
+   "est_h": 1,
+   "done_h": 0.0,
+   "deps": [
+    "B03-文"
+   ],
+   "start_day": 2,
+   "due_day": 3,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 3
+  },
+  {
+   "id": "B04-文",
+   "project": "B",
+   "name": "我们为什么要做一台“小”暖风机（文案）",
+   "owner": "lixiang",
+   "est_h": 5,
+   "done_h": 0.0,
+   "deps": [],
+   "start_day": 2,
+   "due_day": 4,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 4,
+   "publish_time": "20:00"
+  },
+  {
+   "id": "B04-图",
+   "project": "B",
+   "name": "我们为什么要做一台“小”暖风机（配图）",
+   "owner": "chenyue",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [
+    "B04-文"
+   ],
+   "start_day": 2,
+   "due_day": 4,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 4
+  },
+  {
+   "id": "B05-文",
+   "project": "B",
+   "name": "工位/宿舍能用的取暖神器？（预热暗示）（文案）",
+   "owner": "lixiang",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [],
+   "start_day": 4,
+   "due_day": 5,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 5,
+   "publish_time": "12:00"
+  },
+  {
+   "id": "B05-图",
+   "project": "B",
+   "name": "工位/宿舍能用的取暖神器？（预热暗示）（配图）",
+   "owner": "chenyue",
+   "est_h": 1,
+   "done_h": 0.0,
+   "deps": [
+    "B05-文"
+   ],
+   "start_day": 4,
+   "due_day": 5,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 5
+  },
+  {
+   "id": "B06-文",
+   "project": "B",
+   "name": "神秘新品倒计时｜猜猜它有多小（文案）",
+   "owner": "lixiang",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [
+    "A0"
+   ],
+   "start_day": 5,
+   "due_day": 6,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 6,
+   "publish_time": "12:00"
+  },
+  {
+   "id": "B06-图",
+   "project": "B",
+   "name": "神秘新品倒计时｜猜猜它有多小（配图）",
+   "owner": "chenyue",
+   "est_h": 1,
+   "done_h": 0.0,
+   "deps": [
+    "B06-文"
+   ],
+   "start_day": 5,
+   "due_day": 6,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 6
+  },
+  {
+   "id": "B07-文",
+   "project": "B",
+   "name": "小暖S2首曝：巴掌大的暖风机（文案）",
+   "owner": "lixiang",
+   "est_h": 5,
+   "done_h": 0.0,
+   "deps": [
+    "A0"
+   ],
+   "start_day": 5,
+   "due_day": 7,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 7,
+   "publish_time": "20:00"
+  },
+  {
+   "id": "B07-图",
+   "project": "B",
+   "name": "小暖S2首曝：巴掌大的暖风机（配图）",
+   "owner": "chenyue",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [
+    "B07-文"
+   ],
+   "start_day": 5,
+   "due_day": 7,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 7
+  },
+  {
+   "id": "B08-文",
+   "project": "B",
+   "name": "小暖S2三大卖点一次看懂（文案）",
+   "owner": "lixiang",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [
+    "A0"
+   ],
+   "start_day": 7,
+   "due_day": 8,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 8,
+   "publish_time": "12:00"
+  },
+  {
+   "id": "B08-图",
+   "project": "B",
+   "name": "小暖S2三大卖点一次看懂（配图）",
+   "owner": "chenyue",
+   "est_h": 1,
+   "done_h": 0.0,
+   "deps": [
+    "B08-文"
+   ],
+   "start_day": 7,
+   "due_day": 8,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 8
+  },
+  {
+   "id": "B09-文",
+   "project": "B",
+   "name": "发布会邀请｜11月18日，一起暖起来（文案）",
+   "owner": "lixiang",
+   "est_h": 5,
+   "done_h": 0.0,
+   "deps": [
+    "A4"
+   ],
+   "start_day": 7,
+   "due_day": 9,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 9,
+   "publish_time": "20:00"
+  },
+  {
+   "id": "B09-图",
+   "project": "B",
+   "name": "发布会邀请｜11月18日，一起暖起来（配图）",
+   "owner": "chenyue",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [
+    "B09-文"
+   ],
+   "start_day": 7,
+   "due_day": 9,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 9
+  },
+  {
+   "id": "B10-文",
+   "project": "B",
+   "name": "发布会筹备幕后花絮（文案）",
+   "owner": "lixiang",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [],
+   "start_day": 9,
+   "due_day": 10,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 10,
+   "publish_time": "12:00"
+  },
+  {
+   "id": "B10-图",
+   "project": "B",
+   "name": "发布会筹备幕后花絮（配图）",
+   "owner": "chenyue",
+   "est_h": 1,
+   "done_h": 0.0,
+   "deps": [
+    "B10-文"
+   ],
+   "start_day": 9,
+   "due_day": 10,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 10
+  },
+  {
+   "id": "B11-文",
+   "project": "B",
+   "name": "倒计时2天｜现场福利剧透（文案）",
+   "owner": "lixiang",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [],
+   "start_day": 10,
+   "due_day": 11,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 11,
+   "publish_time": "12:00"
+  },
+  {
+   "id": "B11-图",
+   "project": "B",
+   "name": "倒计时2天｜现场福利剧透（配图）",
+   "owner": "chenyue",
+   "est_h": 1,
+   "done_h": 0.0,
+   "deps": [
+    "B11-文"
+   ],
+   "start_day": 10,
+   "due_day": 11,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 11
+  },
+  {
+   "id": "B12-文",
+   "project": "B",
+   "name": "发布会预告+现场亮点剧透（文案）",
+   "owner": "lixiang",
+   "est_h": 5,
+   "done_h": 0.0,
+   "deps": [
+    "A14"
+   ],
+   "start_day": 10,
+   "due_day": 12,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 12,
+   "publish_time": "20:00"
+  },
+  {
+   "id": "B12-图",
+   "project": "B",
+   "name": "发布会预告+现场亮点剧透（配图）",
+   "owner": "chenyue",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [
+    "B12-文"
+   ],
+   "start_day": 10,
+   "due_day": 12,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 12
+  },
+  {
+   "id": "B13-文",
+   "project": "B",
+   "name": "发布会现场直击（文案）",
+   "owner": "lixiang",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [
+    "A16"
+   ],
+   "start_day": 12,
+   "due_day": 13,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 13,
+   "publish_time": "12:00"
+  },
+  {
+   "id": "B13-图",
+   "project": "B",
+   "name": "发布会现场直击（配图）",
+   "owner": "chenyue",
+   "est_h": 1,
+   "done_h": 0.0,
+   "deps": [
+    "B13-文"
+   ],
+   "start_day": 12,
+   "due_day": 13,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 13
+  },
+  {
+   "id": "B14-文",
+   "project": "B",
+   "name": "小暖S2正式发布｜到手价¥{最终价}（文案）",
+   "owner": "lixiang",
+   "est_h": 5,
+   "done_h": 0.0,
+   "deps": [
+    "A0"
+   ],
+   "start_day": 12,
+   "due_day": 14,
+   "approver": "wangli+zhoutao",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 14,
+   "publish_time": "20:00"
+  },
+  {
+   "id": "B14-图",
+   "project": "B",
+   "name": "小暖S2正式发布｜到手价¥{最终价}（配图）",
+   "owner": "chenyue",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [
+    "B14-文"
+   ],
+   "start_day": 12,
+   "due_day": 14,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "公众号",
+   "publish_day": 14
+  },
+  {
+   "id": "B15-文",
+   "project": "B",
+   "name": "发布会回顾+评论区抽奖（文案）",
+   "owner": "lixiang",
+   "est_h": 2,
+   "done_h": 0.0,
+   "deps": [],
+   "start_day": 14,
+   "due_day": 15,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 15,
+   "publish_time": "12:00"
+  },
+  {
+   "id": "B15-图",
+   "project": "B",
+   "name": "发布会回顾+评论区抽奖（配图）",
+   "owner": "chenyue",
+   "est_h": 1,
+   "done_h": 0.0,
+   "deps": [
+    "B15-文"
+   ],
+   "start_day": 14,
+   "due_day": 15,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true,
+   "platform": "小红书",
+   "publish_day": 15
+  },
+  {
+   "id": "C1",
+   "project": "C",
+   "name": "现状访谈（李想+项目助理）",
+   "owner": "zhangwei",
+   "est_h": 3,
+   "done_h": 0.0,
+   "deps": [],
+   "start_day": 1,
+   "due_day": 3,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "C2",
+   "project": "C",
+   "name": "入职问题清单与现状流程图",
+   "owner": "zhangwei",
+   "est_h": 4,
+   "done_h": 0.0,
+   "deps": [
+    "C1"
+   ],
+   "start_day": 4,
+   "due_day": 5,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "C3",
+   "project": "C",
+   "name": "入职清单Checklist",
+   "owner": "zhangwei",
+   "est_h": 6,
+   "done_h": 0.0,
+   "deps": [
+    "C2"
+   ],
+   "start_day": 6,
+   "due_day": 8,
+   "approver": "liumin",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "C4",
+   "project": "C",
+   "name": "市场部新人手册（知识库）",
+   "owner": "lixiang",
+   "est_h": 10,
+   "done_h": 0.0,
+   "deps": [
+    "C3"
+   ],
+   "start_day": 9,
+   "due_day": 12,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "C5",
+   "project": "C",
+   "name": "手册排版与封面",
+   "owner": "chenyue",
+   "est_h": 4,
+   "done_h": 0.0,
+   "deps": [
+    "C4"
+   ],
+   "start_day": 12,
+   "due_day": 13,
+   "approver": null,
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  },
+  {
+   "id": "C6",
+   "project": "C",
+   "name": "汇报材料",
+   "owner": "zhangwei",
+   "est_h": 3,
+   "done_h": 0.0,
+   "deps": [
+    "C3",
+    "C4"
+   ],
+   "start_day": 14,
+   "due_day": 15,
+   "approver": "wangli",
+   "status": "未开始",
+   "reported_progress": 0,
+   "exists": true
+  }
+ ],
+ "budget": {
+  "场地": {
+   "budget": 30000,
+   "committed": 30000,
+   "paid": 15000
+  },
+  "会务执行": {
+   "budget": 40000,
+   "committed": 0,
+   "paid": 0
+  },
+  "物料设计制作": {
+   "budget": 20000,
+   "committed": 0,
+   "paid": 0
+  },
+  "餐饮茶歇": {
+   "budget": 30000,
+   "committed": 0,
+   "paid": 0
+  },
+  "伴手礼": {
+   "budget": 20000,
+   "committed": 0,
+   "paid": 0
+  },
+  "机动": {
+   "budget": 10000,
+   "committed": 0,
+   "paid": 0
+  }
+ },
+ "product": {
+  "price": 399,
+  "claims": [
+   "3秒速热",
+   "巴掌大小",
+   "静音30分贝"
+  ],
+  "doc_version": "v1（未定稿）"
+ },
+ "invites": {
+  "media_target": 20,
+  "dealer_target": 40,
+  "media_confirmed": 5,
+  "dealer_confirmed": 13
+ },
+ "events": {
+  "_说明": "key=事件ID；stage: 未触发/潜伏/显露/爆发/化解/减轻/未处理；done_k: 已完成的关键动作",
+  "E01": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E02": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E03": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E04": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E05": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E06": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E07": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E08": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E09": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E10": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E11": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E12": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E13": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E14": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  },
+  "E15": {
+   "stage": "未触发",
+   "done_k": [],
+   "result": null
+  }
+ },
+ "random_drawn": [],
+ "improvements": {
+  "I1": {
+   "active": false,
+   "day": null
+  },
+  "I2": {
+   "active": false,
+   "day": null
+  },
+  "I3": {
+   "active": false,
+   "day": null
+  },
+  "I4": {
+   "active": false,
+   "day": null
+  },
+  "I5": {
+   "active": false,
+   "day": null
+  },
+  "I6": {
+   "active": false,
+   "day": null
+  },
+  "I7": {
+   "active": false,
+   "day": null
+  },
+  "I8": {
+   "active": false,
+   "day": null
+  },
+  "I9": {
+   "active": false,
+   "day": null
+  },
+  "I10": {
+   "active": false,
+   "day": null
+  },
+  "I11": {
+   "active": false,
+   "day": null
+  },
+  "I12": {
+   "active": false,
+   "day": null
+  },
+  "I13": {
+   "active": false,
+   "day": null
+  }
+ },
+ "flags": {
+  "c_mandated": false,
+  "param_freeze": false,
+  "single_source": false
+ },
+ "metrics_daily": [],
+ "log": []
+}

@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# 运行时数据（含导演视角的剧透和你的私人记录）
+.env
+state/
+logs/
+output/
+
+# 旧存档备份（含剧透，别看）
+backups/
+
+# 飞书模式记住的群 ID / 你的 open_id
+feishu_ids.json
